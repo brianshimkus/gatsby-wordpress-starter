@@ -27,14 +27,27 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-source-wordpress',
+      resolve: "gatsby-plugin-antd",
+      options: {
+        style: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-less",
+      options: {
+        javascriptEnabled: true,
+      },
+    },
+    {
+      resolve: "gatsby-source-wordpress",
       options: {
         /*
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'demo.wp-api.org' or 'www.example-site.com'
          */
-        baseUrl: "http://gatsbywordpressstarter.local/",
+        baseUrl: "www.laurenjcolletticom.local",
         // The protocol. This can be http or https.
         protocol: "http",
         // Indicates whether the site is hosted on wordpress.com.
@@ -104,16 +117,20 @@ module.exports = {
         // all routes that begin with `yoast` from fetch.
         // Whitelisted routes using glob patterns
         includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/users",
+          "**/*/*/categories",
+          "**/*/*/posts",
+          "**/*/*/pages",
+          "**/*/*/media",
+          "**/*/*/tags",
+          "**/*/*/taxonomies",
+          "**/*/*/users",
+          "**/*/*/menus",
+          "**/*/*/logo",
+          "**/*/*/favicon",
+          "**/*/*/acf",
         ],
         // Blacklisted routes using glob patterns
-        excludedRoutes: ["**/posts/1456"],
+        excludedRoutes: [],
         // Set this to keep media sizes.
         // This option is particularly useful in case you need access to
         // URLs for thumbnails, or any other media detail.
