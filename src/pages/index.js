@@ -1,1 +1,5 @@
-export default function(){return null};
+import "../styles/styles"
+
+export default function() {
+  return null
+}
